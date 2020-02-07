@@ -7,10 +7,10 @@ project(tf2_py)
 find_package(catkin REQUIRED COMPONENTS rospy tf2)
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+# find_package(Boost REQUIRED COMPONENTS system thread)
 
-
-find_package(PythonLibs 2 REQUIRED)
+find_package(PythonInterp REQUIRED)
+find_package(PythonLibs "${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}" REQUIRED)
 include_directories(${PYTHON_INCLUDE_PATH} ${catkin_INCLUDE_DIRS})
 
 ## Uncomment this if the package has a setup.py. This macro ensures
